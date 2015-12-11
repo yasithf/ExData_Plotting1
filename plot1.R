@@ -16,6 +16,7 @@ df <- main["2007-02-01" == main$Date | main$Date == "2007-02-02" ,]
 
 df$Global_active_power <- as.integer(df$Global_active_power)
 
-#why does the graph look similar to the coursera graph why we divide by 600?
+png("plot1.png", width = 480, height = 480)
 df$Global_active_power <- df$Global_active_power / 600
 hist(df$Global_active_power, col = "red", breaks = 12, main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frquency")
+dev.off()
